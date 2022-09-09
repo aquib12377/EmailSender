@@ -26,10 +26,7 @@ namespace EmailSender
             Body = "Test Body";
             ReceiverEmails = new List<string>
             {
-                "aquibansari12377@gmail.com",
-                "ansarimohammedaquib@gmail.com",
-                "aquib@logicloop.io",
-                "aquibansari.work@gmail.com"
+                "Receiver Emails",
             };
             //Send email without attachment
             var res1 = EmailSender.SendEmail(SenderEmail, SenderPassword, ReceiverEmails, Body, Subject);
