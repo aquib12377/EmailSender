@@ -6,9 +6,9 @@ namespace EmailSender
 {
     public class EmailResponse
     {
-        public bool Status { get; set; }
-        public string Message { get; set; }
-        public object ResponseObject { get; set; }
+        public bool Status { get; }
+        public string Message { get; }
+        public object ResponseObject { get; }
 
         public EmailResponse(bool status, string message, object responseObject)
         {
@@ -17,11 +17,11 @@ namespace EmailSender
             ResponseObject = responseObject;
         }
 
-        public EmailResponse(bool status, string message, object responseObject, int attachmentsCount)
+        public static EmailResponse WithAttachments(bool status, string message, object responseObject, int attachmentsCount)
         {
-            Status = status;
-            Message = message + "\r\n" + $"Along with {attachmentsCount} attachments.";
-            ResponseObject = responseObject;
+            string messageWithAttachments = $"{message}\r\nAlong with {attachmentsCount} attachments.";
+            return new EmailResponse(status, messageWithAttachments, responseObject);
         }
     }
+
 }

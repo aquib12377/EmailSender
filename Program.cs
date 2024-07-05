@@ -1,42 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace EmailSender
 {
     class Program
     {
-        private static string SenderEmail = string.Empty;
-        private static string Subject = string.Empty;
-        private static string Body = string.Empty;
-        private static SecureString SenderPassword = null;
-        private static List<string> ReceiverEmails = null;
-        private static List<string> Files = null;
+        private static readonly string SenderEmail = "Sender email";
+        private static readonly SecureString SenderPassword = GetSecureString("Sender password");
+        private static readonly string Subject = "Test Email";
+        private static readonly string Body = "Test Body";
+        private static readonly List<string> ReceiverEmails = new List<string> { "Receiver Emails" };
+        private static readonly List<string> Files = new List<string> { @"attachment path" };
+
         static void Main(string[] args)
         {
-            SenderEmail = "Sender email";
-            SenderPassword = new SecureString();
-
-            foreach (var _char in "Sender password")
-            {
-                SenderPassword.AppendChar(_char);
-            }
-
-            Subject = "Test Email";
-            Body = "Test Body";
-            ReceiverEmails = new List<string>
-            {
-                "Receiver Emails",
-            };
-            //Send email without attachment
+            // Send email without attachment
             var res1 = EmailSender.SendEmail(SenderEmail, SenderPassword, ReceiverEmails, Body, Subject);
 
-            Files = new List<string>
-            {
-                @"attachment path"
-            };
-            //Send Email with attachments
+            Console.WriteLine($"Email response without attachments -> {JsonSerializer.Serialize(res1)}");
+
+            // Send email with attachments
             var res2 = EmailSender.SendEmail(SenderEmail, SenderPassword, ReceiverEmails, Body, Subject, Files);
+
+            Console.WriteLine($"Email response with attachments -> {JsonSerializer.Serialize(res2)}");
+        }
+
+        private static SecureString GetSecureString(string plainText)
+        {
+            SecureString secureString = new SecureString();
+            foreach (char c in plainText)
+            {
+                secureString.AppendChar(c);
+            }
+            secureString.MakeReadOnly();
+            return secureString;
         }
     }
 }
