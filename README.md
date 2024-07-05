@@ -129,6 +129,10 @@ If you have any questions or feedback, feel free to reach out:
 - **Email**: [ansarimohammedaquib@gmail.com](mailto:ansarimohammedaquib@gmail.com)
 - **GitHub**: [aquib12377](https://github.com/aquib12377)
 
+## Support
+If you find this project helpful and would like to support its development, you can buy me a coffee!
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/aquib12377){:target="_blank"}
+
 ---
 
 *This README.md was generated with the help of ChatGPT.*
