@@ -130,8 +130,7 @@ If you have any questions or feedback, feel free to reach out:
 - **GitHub**: [aquib12377](https://github.com/aquib12377)
 
 ## Support
-If you find this project helpful and would like to support its development, you can buy me a coffee!
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/aquib12377){:target="_blank"}
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/aquib12377)
 
 ---
 
